@@ -32,15 +32,18 @@ class UrlGenerator(CheckSumGenerator):
         url= self.bbbUrl+apiName+ "?"+parameters+"&checksum="+self.checksum
         return url
 
-#C=CheckSumGenerator(SECRET)
-#C.setChecksum(API_NAME,PARAMETERS)
-#CS=C.getChecksum()
-#print(CS);
-if any(v is "" for v in [DOMAIN,SECRET,API_NAME,PARAMETERS]):
-    print("Provide data in variables")
-    import sys
-    sys.exit()
+
+if __name__ == '__main__':
+
+    #C=CheckSumGenerator(SECRET)
+    #C.setChecksum(API_NAME,PARAMETERS)
+    #CS=C.getChecksum()
+    #print(CS);
+    if any(v is "" for v in [DOMAIN,SECRET,API_NAME,PARAMETERS]):
+        print("Provide data in variables")
+        import sys
+        sys.exit()
  
-U=UrlGenerator(DOMAIN,SECRET,True)
-url=U.getURL(API_NAME,PARAMETERS);
-print(url);
+    U=UrlGenerator(DOMAIN,SECRET,True)
+    url=U.getURL(API_NAME,PARAMETERS);
+    print(url);
